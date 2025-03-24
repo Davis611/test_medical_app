@@ -1,186 +1,159 @@
-* {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-}
-.hero-section {
-    height: 100vh;
-    padding-top: 15rem;
-    background-color: transparent;
-    z-index: -1;
-}
-.hero-section .flex-hero {
-    flex-direction: column;
-    gap: 30px;
-    text-align:center;
-}
+/* Landing Page Styles */
 
-.hero-section .flex-hero h1 {
-    font-size: 65px;
-    font-weight: 900;
-}
-.text-gradient {
-    background: linear-gradient(45deg,#2190FF 2.34%,#b673f8 100.78%);
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3685fb, #4e73e0);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Container that wraps the content */
+  .container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Flexbox for hero content */
+  .flex-hero {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px;
+  }
+  
+  /* Main heading style */
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  h1 span {
+    background: -webkit-linear-gradient(45deg, #ff7c00, #f6d02f);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.hero-section h4 {
-    font-size: 22px;
-    font-weight: 300;
-    text-align: center;
-    padding: 12px 14rem;
-    color:#969BA5;
-}
-
-.hero-section .button {
-    padding: 0.7rem 2rem;
-    border-radius: 25px;
-    background-color: #2190FF;
-    color: #fff;
-    border: 1px solid transparent;
-    width: 15%;
-    margin-top:15px;
-}
-
-.hero-section div:nth-child(2) {
-    margin-top: 4rem;
-}
-
-.hero-section .image {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
-}
-
-
-
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-h1,
-h2 {
-    line-height: 1.3;
-    margin: 15px 0;
-}
-
-
-
-button {
-    transition: all 0.5s ease-in-out;
-    font-size: 1em;
-    padding: 1em;
-    width: 100%;
+    color: transparent;
+    font-weight: 700;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    font-weight: 400;
+    opacity: 0.8;
+    padding: 0 15px;
+  }
+  
+  /* Button styles */
+  .button {
+    background-color: #ff7c00;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
     border-radius: 5px;
-    margin-top: 10px;
-}
-
-
-.button:hover {
-    transform: scale(0.98);
-}
-
-
-@media screen and (max-width:980px) {
-    .hero-section h1 {
-        text-align: center;
-    }
-    .hero-section {
-        padding-top: 12rem;
-    }
-    .hero-section h4 {
-        font-size: 21px;
-        text-align: center;
-        padding: 0px 4rem;
-    }
-    .image {
-        width: 500px;
-    }
-    .hero-section .button{
-        margin-top:15px;
-        width: 45%;
-    }
-    
-}
-
-@media screen and (max-width:400px) {
-    .hero-section h1 {
-        font-size: 35px;
-    }
-
-    .hero-section {
-        padding-top: 10rem;
-    }
-    .hero-section h4 {
-        font-size: 16px;
-        padding: 0px 2rem;
-    }
-
-}
-
-
-
-button,
-a,
-li {
     cursor: pointer;
-}
-
-/* Blob */
-
-
-/* Blobs */
-.flex-hero .blob-cont {
-    justify-content: center;
-    align-items: center;
-    position: static;
-    margin: 10px;
-}
-
-
-.blob {
-    border-radius: 100px;
-    filter: blur(60px);
-}
-
-.blue {
-    background-color: #2937a392;
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 55%;
-    bottom: 25%;
-    margin: auto;
-    height: 150px;
-    width: 200px;
-    animation: blobani 8s infinite ease;
-}
-.blue1 {
-    background-color: #2937a392;
-    position: absolute;
-    top:0;
-    left: 0;
-    right: -55%;
-    bottom: -25%;
-    margin: auto;
-    height: 150px;
-    width: 200px;
-    animation: blobani 8s infinite ease;
-}
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
   
+  .button:hover {
+    background-color: #f6d02f;
+    transform: scale(1.1);
+  }
   
-  @keyframes blobani {
-    0% {top: 0; left: 0; transform: scale(1);}
-    30% {top: 0; left: 0; transform: scale(1.2);}
-    60% {top: 0; left: 0; transform: scale(1.3);}
-    100% {top: 0; left: 0; transform: scale(1);}
+  /* Blob styling (animated shapes) */
+  .blob-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .blue, .blue1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: blob 5s ease-in-out infinite;
+  }
+  
+  .blue {
+    background-color: rgba(54, 133, 251, 0.5);
+    animation-delay: 0s;
+  }
+  
+  .blue1 {
+    background-color: rgba(58, 73, 187, 0.5);
+    animation-delay: 2.5s;
+  }
+  
+  /* Keyframes for Blob animation */
+  @keyframes blob {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.4);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .hero-section {
+      height: auto;
+      padding: 50px 20px;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h4 {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .button {
+      padding: 12px 25px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .button {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+  
+    .blob-cont {
+      display: none; /* Hide blobs on very small screens */
+    }
   }
   

@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+
+    <!-- Preconnect to external resources for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- External Stylesheet -->
     <link rel="stylesheet" href="./LandingPage.css">
+
+    <!-- Favicon (Optional for better branding) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <section class="hero-section">
-        <div>
-          <div data-aos="fade-up" class="flex-hero">
-              
-              <h1>
-                Your Health<br/>
-                <span class="text-gradient">
-                  
-                  Our Responsibility
-                </span>
-              </h1>
+    <main class="hero-section">
+        <div class="container">
+            <!-- Hero Section Content -->
+            <div data-aos="fade-up" class="flex-hero">
+                <!-- Main Heading -->
+                <h1>
+                    Your Health<br />
+                    <span class="text-gradient">
+                        Our Responsibility
+                    </span>
+                </h1>
+                
+                <!-- Animated Blob Containers -->
                 <div class="blob-cont">
                     <div class="blue blob"></div>
                 </div>
                 <div class="blob-cont">
                     <div class="blue1 blob"></div>
                 </div>
-              <h4>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque at quae ducimus. Suscipit omnis quibusdam non cum rem voluptatem! 
-              </h4>
-              <a href="#services">
-                <button class="button">Get Started</button>
-              </a>
                 
-          </div>
-  
+                <!-- Subheading Text -->
+                <h4>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque at quae ducimus. Suscipit omnis quibusdam non cum rem voluptatem!
+                </h4>
+                
+                <!-- Call to Action Button -->
+                <a href="#services" aria-label="Explore our services">
+                    <button class="button">Get Started</button>
+                </a>
+            </div>
         </div>
-      </section>
+    </main>
+
+    <!-- Optional JavaScript (defer for faster initial page load) -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init();
+    </script>
 </body>
+
 </html>
