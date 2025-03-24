@@ -1,64 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import { Link, useNavigate } from 'react-router-dom'; // Using React Router's Link for navigation
 
 const Navbar = () => {
-  const toggleMenu = () => {
-    // Add logic for toggling the menu (e.g., adding/removing a class for mobile view)
-    const navLinks = document.querySelector('.nav__links');
-    navLinks.classList.toggle('active');
-  };
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userName, setUserName] = useState(''); // State to hold the extracted user name
+    const navigate = useNavigate();
 
-  return (
-    <div>
-      <nav>
-        {/* Nav logo section */}
-        <div className="nav-logo">
-          <a href="/" aria-label="Home">
-            Doctor Connect
-            {/* Insert an SVG icon: doctor with stethoscope */}
-            <svg xmlns="https://www.svgrepo.com/show/63453/doctor-with-stethoscope.svg" height="26" width="26" viewBox="0 0 1000 1000" style={{ fill: '#3685fb' }} aria-hidden="true">
-              <title>Doctor With Stethoscope</title>
-              <g>
-                <g>
-                  {/* Path stethoscope icon */}
-                  <path d="M499.8,10c91.7,0,166,74.3,166,166c0,91.7-74.3,166-166,166c-91.7,0-166-74.3-166-166C333.8,84.3,408.1,10,499.8,10z"></path>
-                  {/* Additional path */}
-                  <path d="M499.8,522.8c71.2,0,129.1-58.7,129.1-129.1H370.6C370.6,464.1,428.6,522.8,499.8,522.8z"></path>
-                  {/* Another path */}
-                  <path d="M693.2,395c-0.7,94.9-70.3,173.7-160.8,188.9v155.9c0,80.3-60.7,150.8-140.8,155.3c-83,4.7-152.7-58.9-157.6-139.7c-22-12.8-35.6-38.5-30.3-66.7c4.7-25.1,25.5-45.6,50.8-49.9c39.7-6.7,74.1,23.7,74.1,62.1c0,23-12.3,43-30.7,54.1c4.7,45.4,45.1,80.4,92.6,76c44.6-4,77.2-44...."></path>
-                </g>
-              </g>
-            </svg>
-          </a>
+    useEffect(() => {
+        // Check if auth-token exists in sessionStorage to set login state
+        const token = sessionStorage.getItem('auth-token');
+        if (token) {
+            setIsLoggedIn(true); // Set the user as logged in
+
+            // Get user email from sessionStorage and extract the name
+            const email = sessionStorage.getItem('email');
+            if (email) {
+                // Extract name before the '@' symbol in the email
+                const name = email.split('@')[0];
+                setUserName(name); // Set the extracted name
+            }
+        }
+    }, []);
+
+    const handleLogout = () => {
+        // Clear session storage on logout
+        sessionStorage.removeItem('auth-token');
+        sessionStorage.removeItem('name');
+        sessionStorage.removeItem('phone');
+        sessionStorage.removeItem('email');
+        setIsLoggedIn(false); // Update login state
+        navigate('/'); // Redirect user to home page
+    };
+
+    return (
+        <div className="navbar">
+            <nav>
+                <div className="nav-logo">
+                    <Link to="/" aria-label="Home">
+                        Doctor Connect
+                        {/* Add SVG or Icon here */}
+                    </Link>
+                </div>
+
+                <ul className="nav__links">
+                    <li className="link">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="link">
+                        <Link to="/appointments">Appointments</Link>
+                    </li>
+
+                    {/* Conditionally render Sign Up and Login or Logout based on the login state */}
+                    {isLoggedIn ? (
+                        <li className="link">
+                            <span className="user-name">{userName}</span> {/* Display the user's name */}
+                            <button onClick={handleLogout} className="btn1">Logout</button>
+                        </li>
+                    ) : (
+                        <>
+                            <li className="link">
+                                <Link to="/signup" className="btn1">Sign Up</Link>
+                            </li>
+                            <li className="link">
+                                <Link to="/login" className="btn1">Login</Link>
+                            </li>
+                        </>
+                    )}
+                </ul>
+            </nav>
         </div>
-
-        {/* Mobile menu toggle button */}
-        <button className="nav__icon" aria-label="Toggle navigation" onClick={toggleMenu}>
-          <i className="fa fa-bars"></i>
-        </button>
-
-        {/* Nav links */}
-        <ul className="nav__links active">
-          <li className="link">
-            <a href="../Landing_Page/LandingPage.html">Home</a>
-          </li>
-          <li className="link">
-            <a href="#">Appointments</a>
-          </li>
-          <li className="link">
-            <a href="../Sign_Up/Sign_Up.html">
-              <button className="btn1">Sign Up</button>
-            </a>
-          </li>
-          <li className="link">
-            <a href="../Login/Login.html">
-              <button className="btn1">Login</button>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
+    );
 };
 
 export default Navbar;
