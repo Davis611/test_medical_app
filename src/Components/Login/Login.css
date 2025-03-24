@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light background for contrast */
+    color: #333;
+}
+
+/* Styles for the main container */
+.container {
+    max-width: 900px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Padding inside the container */
+    margin-top: 5%; /* Reduced top margin for better vertical positioning */
+    background-color: #fff; /* Background for form container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 8px; /* Rounded corners for the container */
+}
+
+/* Styles for form groups */
+.form-group {
+    margin-bottom: 20px; /* Bottom margin for spacing between form groups */
+}
+
+/* Styles for form group labels */
+.form-group label {
+    display: block; /* Block-level label */
+    margin-bottom: 8px; /* Slightly larger bottom margin for better spacing */
+    font-weight: bold; /* Bold text for labels */
+    color: #3c79a7; /* A soft color for labels */
+}
+
+/* Styles for form controls */
+.form-control {
+    width: 100%; /* Make the form controls take up full available width */
+    max-width: 400px; /* Limit the width to 400px for larger screens */
+    padding: 12px; /* Increased padding for better input area */
+    font-size: 16px; /* Clear and readable font size */
+    border: 1px solid #ccc; /* Light border around form controls */
+    border-radius: 4px; /* Rounded corners for form controls */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    transition: border-color 0.3s ease; /* Smooth transition for focus border */
+}
+
+/* Focus state for form controls */
+.form-control:focus {
+    border-color: #007bff; /* Blue border when focused */
+    outline: none; /* Remove default outline */
+}
+
+/* Styles for button groups */
+.btn-group {
+    margin-top: 20px; /* Space above buttons for better alignment */
+    margin-bottom: 20px; /* Space below buttons */
+    display: flex; /* Use flexbox for button layout */
+    gap: 10px; /* Space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+}
+
+/* General button styling */
+.btn {
+    padding: 12px 24px; /* Larger padding for better click area */
+    font-size: 16px; /* Consistent font size across all buttons */
+    border: none; /* Remove border from buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    width: 45%; /* Make buttons a little smaller than full width */
+    max-width: 200px; /* Limit button width */
+}
+
+/* Primary button styling */
+.btn-primary {
+    background-color: #007bff; /* Blue background for primary button */
+    color: #fff; /* White text for primary button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Danger (red) button styling */
+.btn-danger {
+    background-color: #dc3545; /* Red background for danger button */
+    color: #fff; /* White text for danger button */
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduced padding on smaller screens */
+        margin-top: 10%; /* Adjust top margin on small screens */
+    }
+
+    .form-control {
+        width: 100%; /* Make form controls take full width */
+    }
+
+    .btn-group {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        gap: 15px; /* Increase gap between buttons */
+    }
+
+    .btn {
+        width: 100%; /* Make buttons take full width */
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Doctor Connect</title> <!-- More descriptive title -->
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <!-- Main container div for the page content -->
+    <div class="container">
+        <!-- Login Grid Layout -->
+        <section class="login-grid">
+            <!-- Login Heading -->
+            <header class="login-text">
+                <h2>Login</h2>
+            </header>
+
+            <!-- Signup Link -->
+            <div class="login-text">
+                Are you a new member? <span><a href="../Sign_Up/Sign_Up.html" class="signup-link">Sign Up Here</a></span>
+            </div>
+
+            <br />
+
+            <!-- Login Form -->
+            <div class="login-form">
+                <form action="#" method="POST">
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required aria-describedby="emailHelp">
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required aria-describedby="passwordHelp">
+                    </div>
+
+                    <!-- Buttons Group -->
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+
+                    <br />
+                    
+                    <!-- Forgot Password Link -->
+                    <div class="login-text">
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

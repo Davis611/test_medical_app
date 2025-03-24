@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #3685fb;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo section */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-logo a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo svg {
+    margin-left: 8px;
+}
+
+/* Navigation Links */
+.nav__links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav__links li {
+    display: inline-block;
+}
+
+.nav__links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav__links .btn1 {
+    background-color: #fff;
+    color: #3685fb;
+    border: 1px solid #3685fb;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav__links .btn1:hover {
+    background-color: #3685fb;
+    color: #fff;
+}
+
+.nav__links a:hover {
+    color: #f0f0f0;
+}
+
+/* Hamburger Menu Button (for mobile) */
+.nav__icon {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav__icon .fa-bars {
+    font-size: 30px;
+}
+
+/* Active state for the links */
+.nav__links.active {
+    display: flex;
+}
+
+.nav__links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav__links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #3685fb;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav__links.active {
+        display: flex;
+    }
+
+    .nav__links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav__icon {
+        display: block;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+}
