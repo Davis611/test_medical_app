@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './Components/Navbar/Navbar';
 
-import InstantConsultation from './components/InstantConsultation'; // Importing InstantConsultation component
+import InstantConsultation from './Components/Instant Consultation/InstantConsultation'; // Importing InstantConsultation component
 
 
 function App() {
