@@ -7,8 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './Components/Navbar/Navbar';
 
-
-
+import InstantConsultation from './components/Instant Consultation/InstantConsultation'; 
 
 
 function App() {
@@ -23,7 +22,7 @@ function App() {
           <Navbar/>
           {/* Set up the Routes for different pages */}
           <Routes>
-           
+          <Route path="/instant-consultation" element={<InstantConsultation />} />
             {/* Define individual Route components for different pages */}
           </Routes>
         </BrowserRouter>
