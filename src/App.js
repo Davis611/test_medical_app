@@ -6,10 +6,10 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './Components/Navbar/Navbar';
-
+import AppointmentFormIC from './Components/AppointmentFormIC/AppointmentFormIC';
 import InstantConsultation from './Components/Instant-Consultation/InstantConsultation'; // Importing InstantConsultation component
-import FindDoctorSearchIC from './Components/FindDoctorSearchIC/FindDoctorSearchIC';
-import DoctorCardIC from './Components/DoctorCardIC/DoctorCardIC';
+import FindDoctorSearchIC from './Components/FindDoctorSearch/FindDoctorSearchIC';
+import DoctorCardIC from './Components/DoctorCard/DoctorCardIC';
 
 function App() {
   <>

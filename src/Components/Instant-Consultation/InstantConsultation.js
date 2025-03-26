@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './InstantConsultation.css';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-
-import FindDoctorSearchIC from './FindDoctorSearchIC/FindDoctorSearchIC';
-import DoctorCardIC from './DoctorCardIC/DoctorCardIC';
+import FindDoctorSearchIC from '../FindDoctorSearch/FindDoctorSearchIC';
+import DoctorCardIC from '../DoctorCard/DoctorCardIC';
 const InstantConsultation = () => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
