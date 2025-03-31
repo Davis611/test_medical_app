@@ -1,6 +1,6 @@
 /* Navbar Container */
 .navbar {
-    background-color: #fff; /* White background */
+    background-color: #0482f8; /* White background */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     padding: 15px 20px;
     position: sticky;
@@ -71,7 +71,7 @@ nav {
 
 /* Instant Booking Button */
 .nav__links button {
-    background-color: #28a745;
+    background-color: #0056b3;
     color: white;
     border: none;
     padding: 10px 15px;
