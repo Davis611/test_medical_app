@@ -1,7 +1,6 @@
 import './App.css';
 
 import React from 'react';
-import AppointmentFormIC from './Components/AppointmentFormIC/AppointmentFormIC';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './Components/Navbar/Navbar';
