@@ -1,15 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import AppointmentFormIC from './Components/AppointmentFormIC/AppointmentFormIC';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from './Components/Navbar/Navbar';
-import AppointmentFormIC from './Components/AppointmentFormIC/AppointmentFormIC';
 import InstantConsultation from './Components/Instant-Consultation/InstantConsultation'; // Importing InstantConsultation component
-import FindDoctorSearchIC from './Components/FindDoctorSearch/FindDoctorSearchIC';
-import DoctorCardIC from './Components/DoctorCard/DoctorCardIC';
 
 function App() {
   <>

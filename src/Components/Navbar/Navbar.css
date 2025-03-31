@@ -1,131 +1,104 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Navbar Container */
+.navbar {
+    background-color: #fff; /* White background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
-
+/* Navigation Bar */
 nav {
-    background-color: #3685fb;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Logo section */
-.nav-logo {
-    display: flex;
-    align-items: center;
-    color: #fff;
+/* Logo Styling */
+.nav-logo a {
     font-size: 24px;
     font-weight: bold;
-}
-
-.nav-logo a {
-    color: #fff;
+    color: #2d2d32;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.nav-logo svg {
-    margin-left: 8px;
 }
 
 /* Navigation Links */
 .nav__links {
-    list-style-type: none;
     display: flex;
+    list-style: none;
     gap: 20px;
 }
 
-.nav__links li {
-    display: inline-block;
-}
-
-.nav__links a {
-    color: #fff;
+/* Individual Links */
+.link a {
     text-decoration: none;
-    font-size: 16px;
+    color: #414146;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
 }
 
-.nav__links .btn1 {
-    background-color: #fff;
-    color: #3685fb;
-    border: 1px solid #3685fb;
-    padding: 8px 16px;
+.link a:hover {
+    color: #007bff;
+}
+
+/* User Name Display */
+.user-name {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+/* Buttons */
+.btn1 {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.nav__links .btn1:hover {
-    background-color: #3685fb;
-    color: #fff;
+.btn1:hover {
+    background-color: #0056b3;
 }
 
-.nav__links a:hover {
-    color: #f0f0f0;
-}
-
-/* Hamburger Menu Button (for mobile) */
-.nav__icon {
-    display: none;
-    font-size: 28px;
-    color: #fff;
-    background: none;
+/* Instant Booking Button */
+.nav__links button {
+    background-color: #28a745;
+    color: white;
     border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.nav__icon .fa-bars {
-    font-size: 30px;
+.nav__links button:hover {
+    background-color: #218838;
 }
 
-/* Active state for the links */
-.nav__links.active {
-    display: flex;
-}
-
-.nav__links {
-    display: flex;
-    gap: 20px;
-}
-
-/* Media queries for responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .nav__links {
-        display: none;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #3685fb;
+    nav {
         flex-direction: column;
-        padding: 10px;
+        align-items: center;
     }
 
-    .nav__links.active {
-        display: flex;
-    }
-
-    .nav__links li {
-        width: 100%;
+    .nav__links {
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .nav__icon {
-        display: block;
     }
 
     .nav-logo {
-        font-size: 20px;
+        margin-bottom: 10px;
     }
 }
