@@ -43,12 +43,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
         </div>
 
         {/* Reference: Book Appointment Button */}
-        <div>
-            <button className="book-appointment-btn">
-                <span>Book Appointment</span>
-                <small>No Booking Fee</small>
-            </button>
-        </div> 
+       
         
 
       </div>
