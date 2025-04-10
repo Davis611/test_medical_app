@@ -6,9 +6,15 @@ import Navbar from './Components/Navbar/Navbar';
 import InstantConsultation from './Components/Instant-Consultation/InstantConsultation'; // Importing InstantConsultation component
 import Login from './Components/Login/Login';
 import Notification from './Components/Notification/Notification';
+import ReviewForm from './Components/ReviewForm/ReviewForm';
+
+
 function App() {
   return (
     <div className="App">
+         
+         {/* Pass necessary details as props */}
+      
       {/* Set up BrowserRouter for routing */}
       <BrowserRouter>
         {/* Display the Navbar component */}
@@ -16,6 +22,7 @@ function App() {
         
         {/* Set up the Routes for different pages */}
         <Routes>
+        <Route path='/ReviewForm' element={<ReviewForm />} />
           <Route path="/Instant-consultation" element={<InstantConsultation />} />
           <Route path='/Sign_Up' element={<Sign_Up />} />
           <Route path='/Login' element={<Login />} />

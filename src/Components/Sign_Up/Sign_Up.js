@@ -9,12 +9,41 @@ const Sign_Up = () => {
     const [email, setEmail] = useState(''); // State for Email
     const [phone, setPhone] = useState(''); // State for Phone
     const [password, setPassword] = useState(''); // State for Password
-    const [showerr, setShowerr] = useState(''); // State to show error messages
+    const [showErr, setShowErr] = useState(''); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
 
     // Function to handle form submission
     const register = async (e) => {
         e.preventDefault(); // Prevent default form submission
+
+        // Basic validation
+        if (!name || !email || !phone || !password) {
+            setShowErr('Please fill out all fields');
+            return;
+        }
+
+        // Email validation
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            setShowErr('Please enter a valid email address');
+            return;
+        }
+
+        // Phone validation (check if it is a 10 digit number)
+        const phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phone)) {
+            setShowErr('Please enter a valid 10-digit phone number');
+            return;
+        }
+
+        // Password validation (minimum 6 characters)
+        if (password.length < 6) {
+            setShowErr('Password must be at least 6 characters long');
+            return;
+        }
+
+        // Clear any previous error message
+        setShowErr('');
 
         // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
@@ -45,9 +74,9 @@ const Sign_Up = () => {
         } else {
             // Show error messages if the response contains errors
             if (json.errors) {
-                setShowerr(json.errors.map(error => error.msg).join(', '));
+                setShowErr(json.errors.map(error => error.msg).join(', '));
             } else {
-                setShowerr(json.error);
+                setShowErr(json.error);
             }
         }
     };
@@ -120,7 +149,7 @@ const Sign_Up = () => {
                         </div>
 
                         {/* Error Display */}
-                        {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                        {showErr && <div className="err" style={{ color: 'red' }}>{showErr}</div>}
 
                         {/* Submit Button */}
                         <button type="submit" className="btn1">Sign Up</button>

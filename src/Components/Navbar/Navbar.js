@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom'; // Using React Router's Link for navigation
 
-
-
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userName, setUserName] = useState(''); // State to hold the extracted user name
@@ -52,13 +50,19 @@ const Navbar = () => {
                     <li className="link">
                         <Link to="/appointments">Appointments</Link>
                     </li>
+                    
+                    <li className="link">
+                        <Link to="/instant-consultation">
+                            <button>Instant Booking Consultation</button>
+                        </Link>
+                    </li>
 
-                    <nav>
-                         {/* Other navigation items */}
-                    <Link to="/instant-consultation">
-                        <button>Instant Booking Consultation</button>
-                     </Link>
-                     </nav>
+                    {/* Conditionally render the Review Link if user is logged in */}
+                    {isLoggedIn && (
+                        <li className="link">
+                            <Link to="/review">Provide Feedback</Link> {/* Review Link */}
+                        </li>
+                    )}
 
                     {/* Conditionally render Sign Up and Login or Logout based on the login state */}
                     {isLoggedIn ? (
