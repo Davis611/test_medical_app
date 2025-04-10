@@ -41,81 +41,23 @@ const Sign_Up = () => {
 
             // Redirect user to home page
             navigate("/");
-            window.location.reload(); // Refresh the page
+
         } else {
+            // Show error messages if the response contains errors
             if (json.errors) {
-                for (const error of json.errors) {
-                    setShowerr(error.msg); // Show error messages
-                }
+                setShowerr(json.errors.map(error => error.msg).join(', '));
             } else {
                 setShowerr(json.error);
             }
         }
     };
 
-    // JSX to render the Sign Up form
     return (
         <div className="container" style={{ marginTop: '5%' }}>
             <div className="signup-grid">
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>
                         {/* Name Input */}
-                        <div className="form-group">
-    <label htmlFor="name">Name</label>
-    <input 
-        value={name} 
-        type="text" 
-        onChange={(e) => setName(e.target.value)} 
-        name="name" 
-        id="name" 
-        className="form-control" 
-        placeholder="Enter your name" 
-        required
-        aria-describedby="nameHelp"
-    />
-    <small id="nameHelp" className="form-text text-muted">
-        Please enter your full name.
-    </small>
-</div>
-
-<div className="form-group">
-    <label htmlFor="phone">Phone</label>
-    <input 
-        value={phone} 
-        onChange={(e) => setPhone(e.target.value)} 
-        type="tel" 
-        name="phone" 
-        id="phone" 
-        className="form-control" 
-        placeholder="Enter your phone number" 
-        pattern="^\d{10}$" 
-        required 
-        aria-describedby="phoneHelp"
-    />
-    <small id="phoneHelp" className="form-text text-muted">
-        Please enter a 10-digit phone number (e.g., 123-456-7890).
-    </small>
-</div>
-
-<div className="form-group">
-    <label htmlFor="password">Password</label>
-    <input 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
-        type="password" 
-        name="password" 
-        id="password" 
-        className="form-control" 
-        placeholder="Enter your password" 
-        required 
-        minLength="6" 
-        aria-describedby="passwordHelp"
-    />
-    <small id="passwordHelp" className="form-text text-muted">
-        Your password must be at least 6 characters long.
-    </small>
-</div>
-
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input 
@@ -126,7 +68,7 @@ const Sign_Up = () => {
                                 id="name" 
                                 className="form-control" 
                                 placeholder="Enter your name" 
-                                aria-describedby="helpId" 
+                                required
                             />
                         </div>
 
@@ -141,7 +83,7 @@ const Sign_Up = () => {
                                 id="email" 
                                 className="form-control" 
                                 placeholder="Enter your email" 
-                                aria-describedby="helpId" 
+                                required
                             />
                         </div>
 
@@ -156,7 +98,8 @@ const Sign_Up = () => {
                                 id="phone" 
                                 className="form-control" 
                                 placeholder="Enter your phone number" 
-                                aria-describedby="helpId" 
+                                pattern="^\d{10}$" 
+                                required
                             />
                         </div>
 
@@ -170,8 +113,9 @@ const Sign_Up = () => {
                                 id="password" 
                                 className="form-control" 
                                 placeholder="Enter your password" 
-                                aria-describedby="helpId" 
-                                type="password"
+                                type="password" 
+                                required 
+                                minLength="6"
                             />
                         </div>
 

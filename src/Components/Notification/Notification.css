@@ -1,35 +1,58 @@
 
-
 .notification-container {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background-color: #f0f4ff;
-    border-left: 5px solid #4a90e2;
-    padding: 16px 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width: 300px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  width: 300px;
+  padding: 15px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeIn 1s ease-out;
+}
+
+
+.notification-content {
+  color: #333;
+}
+
+
+.notification-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.notification-content p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+
+.notification-content strong {
+  color: #007bff;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .notification-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .notification-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
-  }
-  
-  .notification-content p {
-    margin: 0;
-    color: #444;
-    font-size: 14px;
-  }
-  
+}
+
+
+.notification-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 16px;
+  color: #007bff;
+  cursor: pointer;
+}

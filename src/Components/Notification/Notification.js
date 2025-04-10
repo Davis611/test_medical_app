@@ -1,8 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
-import './Notification.css';
-
+import './Notification.css';  
 
 const Notification = ({ children }) => {
   
@@ -10,14 +8,15 @@ const Notification = ({ children }) => {
   const [username, setUsername] = useState("");
   const [doctorData, setDoctorData] = useState(null);
   const [appointmentData, setAppointmentData] = useState(null);
-  const [showNotification, setShowNotification] = useState(false);
-
+  const [showNotification, setShowNotification] = useState(false); 
   
   useEffect(() => {
     
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
-    const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
+    const storedAppointmentData = storedDoctorData
+      ? JSON.parse(localStorage.getItem(storedDoctorData?.name))
+      : null;
 
     
     if (storedUsername) {
@@ -33,26 +32,20 @@ const Notification = ({ children }) => {
     
     if (storedAppointmentData) {
       setAppointmentData(storedAppointmentData);
-      setShowNotification(true);
+      setShowNotification(true);  
     }
-  }, []);
+  }, []);  
 
-  
-  useEffect(() => {
-    if (!appointmentData) {
-      setShowNotification(false);
-    }
-  }, [appointmentData]);
-
-  
+  // Return JSX elements
   return (
     <div>
       {/* Render Navbar component */}
-      <Navbar></Navbar>
+      <Navbar />
+
       {/* Render children components */}
       {children}
 
-      {/* Display appointment notification if user is logged in and notification should be shown */}
+      {/* Display appointment notification if user is logged in and appointmentData exists */}
       {isLoggedIn && showNotification && appointmentData && (
         <div className="notification-container">
           <div className="notification-content">
@@ -67,6 +60,5 @@ const Notification = ({ children }) => {
     </div>
   );
 };
-
 
 export default Notification;
