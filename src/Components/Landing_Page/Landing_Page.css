@@ -1,178 +1,101 @@
-/* Landing Page Styles */
-
-/* Global Styles */
-:root {
-    --primary-color: #3685fb;
-    --secondary-color: #4e73e0;
-    --accent-color: #ff7c00;
-    --accent-light: #f6d02f;
-    --text-color-light: rgba(255, 255, 255, 0.8);
-    --text-color-dark: rgba(0, 0, 0, 0.8);
-    --font-family: 'Poppins', sans-serif;
+/* Reset & base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    font-family: var(--font-family);
-    box-sizing: border-box;
-    background-color: #f8f8f8;
-}
-
-/* Hero Section */
 .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff, #e1ecf7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  text-align: center;
 }
 
-.container {
-    text-align: center;
-    padding: 20px;
-    max-width: 1200px;
-    width: 100%;
-}
-
-/* Flexbox for hero content */
 .flex-hero {
-    position: relative;
-    z-index: 2;
-    padding: 40px 20px;
+  position: relative;
+  max-width: 800px;
+  z-index: 1;
 }
 
-h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    font-weight: 600;
+.flex-hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #222;
+  margin-bottom: 1rem;
 }
 
-h1 span {
-    background: -webkit-linear-gradient(45deg, var(--accent-color), var(--accent-light));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
+.text-gradient {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-h4 {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 20px auto;
-    font-weight: 400;
-    opacity: 0.8;
-    padding: 0 15px;
+.flex-hero h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
-/* Button styles */
+/* Button styling */
 .button {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 12px 30px;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
-    background-color: var(--accent-light);
-    transform: scale(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
 }
 
-/* Blob styling (animated shapes) */
+/* Blobs */
 .blob-cont {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+  position: absolute;
+  z-index: 0;
 }
 
-.blue, .blue1 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: blob 5s ease-in-out infinite;
+.blob {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.3;
+  position: absolute;
+  animation: blobFloat 8s ease-in-out infinite;
 }
 
+/* Blue blob */
 .blue {
-    background-color: rgba(54, 133, 251, 0.5);
-    animation-delay: 0s;
+  background: #007bff;
+  top: -60px;
+  left: -60px;
 }
 
+/* Lighter blue blob */
 .blue1 {
-    background-color: rgba(58, 73, 187, 0.5);
-    animation-delay: 2.5s;
+  background: #00c6ff;
+  bottom: -60px;
+  right: -60px;
+  animation-delay: 2s;
 }
 
-/* Keyframes for Blob animation */
-@keyframes blob {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.4);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .hero-section {
-        height: auto;
-        padding: 50px 20px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h4 {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .button {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-    }
-
-    /* Make blobs smaller on medium screens */
-    .blue, .blue1 {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .button {
-        padding: 10px 20px;
-        font-size: 0.8rem;
-    }
-
-    .blob-cont {
-        display: none; /* Hide blobs on very small screens */
-    }
-
-    /* Further reduce blob size for small screens */
-    .blue, .blue1 {
-        width: 120px;
-        height: 120px;
-    }
+/* Blob animation */
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }

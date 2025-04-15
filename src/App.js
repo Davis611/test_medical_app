@@ -7,7 +7,7 @@ import InstantConsultation from './Components/Instant-Consultation/InstantConsul
 import Login from './Components/Login/Login';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
-
+import Landing_Page from './Components/Landing_Page/Landing_Page';
 
 function App() {
   return (
