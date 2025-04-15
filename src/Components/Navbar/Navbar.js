@@ -87,6 +87,8 @@ const Navbar = () => {
                             <li className="link">
                                 <Link to="/login" className="btn1">Login</Link>
                             </li>
+                            <button onClick={devLogin}>Dev Login</button>
+
                         </>
                     )}
                 </ul>
