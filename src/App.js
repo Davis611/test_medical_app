@@ -27,6 +27,7 @@ function App() {
           <Route path='/Sign_Up' element={<Sign_Up />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/Notification' element={<Notification />} />
+          <Route path="/Landing_Pgae" element={<Landing_Page/>}/>
         </Routes>
       </BrowserRouter>
     </div>
