@@ -8,6 +8,7 @@ import Login from './Components/Login/Login';
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
+import ProfileCard from './Components/ProfileCard/ProfileCard';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/Login' element={<Login />} />
           <Route path='/Notification' element={<Notification />} />
           <Route path="/Landing_Pgae" element={<Landing_Page/>}/>
+          <Route path='/ProfileCard'  element={<ProfileCard/>}/>
         </Routes>
       </BrowserRouter>
     </div>
