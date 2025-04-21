@@ -2,10 +2,21 @@ import React from "react";
 import "./ReportsLayout.css";
 
 const ReportsLayout = () => {
-  
   const reports = [
-    { id: 1, title: "Health Checkup", date: "2025-04-01", status: "Completed" },
-    { id: 2, title: "Blood Test", date: "2025-04-10", status: "Pending" },
+    {
+      id: 1,
+      title: "Health Checkup",
+      date: "2025-04-01",
+      status: "Completed",
+      file: "/patient_report.pdf", // path from public folder
+    },
+    {
+      id: 2,
+      title: "Blood Test",
+      date: "2025-04-10",
+      status: "Pending",
+      file: "/patient_report.pdf",
+    },
   ];
 
   return (
@@ -26,6 +37,7 @@ const ReportsLayout = () => {
             <th>Report Title</th>
             <th>Date</th>
             <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +47,25 @@ const ReportsLayout = () => {
               <td>{report.title}</td>
               <td>{report.date}</td>
               <td>{report.status}</td>
+              <td>
+                {/* View in new tab */}
+                <a
+                  href={report.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="action-btn view"
+                >
+                  View
+                </a>
+                {/* Download */}
+                <a
+                  href={report.file}
+                  download={`${report.title.replace(/\s+/g, "_")}.pdf`}
+                  className="action-btn download"
+                >
+                  Download
+                </a>
+              </td>
             </tr>
           ))}
         </tbody>
