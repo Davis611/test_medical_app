@@ -9,7 +9,7 @@ import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
 import ProfileCard from './Components/ProfileCard/ProfileCard';
-
+import ReportsLayout from './Components/ReportsLayout/ReportLayout';
 function App() {
   return (
     <div className="App">
@@ -30,6 +30,7 @@ function App() {
           <Route path='/Notification' element={<Notification />} />
           <Route path="/Landing_Pgae" element={<Landing_Page/>}/>
           <Route path='/ProfileCard'  element={<ProfileCard/>}/>
+          <Route path='/reports' element={<ReportsLayout/>}/>
         </Routes>
       </BrowserRouter>
     </div>
