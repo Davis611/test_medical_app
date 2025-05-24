@@ -5,13 +5,13 @@ import "./Landing_Page.css";
 const Landing_Page = () => {
   return (
     <section className="hero-section">
-      <div className="flex-hero" data-aos="fade-up">
+      <div className="flex-hero">
         <h1>
           Your Health<br />
           <span className="text-gradient">Our Responsibility</span>
         </h1>
 
-        {/* Animated background blobs */}
+        {/* Background blobs */}
         <div className="blob-cont">
           <div className="blue blob"></div>
         </div>
@@ -23,7 +23,6 @@ const Landing_Page = () => {
           We provide trusted, professional healthcare support to ensure your well-being is always in good hands.
         </h4>
 
-        {/* Smooth scroll or link to services */}
         <a href="#services">
           <button className="button">Get Started</button>
         </a>
